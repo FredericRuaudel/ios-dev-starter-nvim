@@ -23,8 +23,8 @@ local function setupListeners()
       vim.keymap.del("n", "<leader>ds")
       vim.keymap.del("n", "<leader>di")
       vim.keymap.del("n", "<leader>do")
-      vim.keymap.del({ "n", "v" }, "<Leader>dh")
-      vim.keymap.del({ "n", "v" }, "<Leader>de")
+      vim.keymap.del({ "n", "v" }, "<leader>dh")
+      vim.keymap.del({ "n", "v" }, "<leader>de")
     end
   end
 end

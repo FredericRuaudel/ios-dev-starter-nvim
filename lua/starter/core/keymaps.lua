@@ -38,8 +38,8 @@ keymap.set("n", "<A-Right>", "<cmd>vertical resize +4<cr>", { desc = "Bigger ver
 -- tabs management
 keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>td", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-keymap.set("n", "[t", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "]t", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+keymap.set("n", "<leader>tl", "<cmd>tabn<CR>", { desc = "Go to next tab (right)" })
+keymap.set("n", "<leader>th", "<cmd>tabp<CR>", { desc = "Go to previous tab (left)" })
 
 -- buffers management
 keymap.set("n", "<C-]>", "<cmd>bn<CR>", { desc = "Go to next buffer" })
