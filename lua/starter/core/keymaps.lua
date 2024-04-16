@@ -7,6 +7,9 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
+-- Reload config
+vim.keymap.set("n", "<leader>r", "<cmd>source $MYVIMRC<cr>", { noremap = true, silent = true })
+
 -- Neovim
 keymap.set("n", "<esc>", "<cmd>nohl<cr>")
 keymap.set("n", "<C-q>", "<cmd>qa!<CR>", { desc = "Close Neovim" })

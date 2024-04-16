@@ -44,3 +44,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- reduce updatetime event for better gitgutter reactivity
+opt.updatetime = 100
