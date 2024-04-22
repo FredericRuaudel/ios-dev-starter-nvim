@@ -49,7 +49,7 @@
 --octalgrouping none
 --operatorfunc spaced
 --organizetypes actor,class,enum,struct
---patternlet inline
+--patternlet hoist
 --ranges spaced
 --redundanttype infer-locals-only
 --self init-only

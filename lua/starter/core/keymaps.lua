@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
 P = function(f)
-  vim.print(vim.inspect(f))
-  return f
+    vim.print(vim.inspect(f))
+    return f
 end
 
 local keymap = vim.keymap -- for conciseness
@@ -55,6 +55,9 @@ keymap.set("n", "<leader>bx", "<cmd>%bd|e#|bd#<CR>", { desc = "Close all buffers
 keymap.set("x", "p", '"_dP')
 keymap.set("x", "Y", "y$", { desc = "Yank to end of line" })
 keymap.set("", "<leader>DD", '"_dd', { desc = "Delete without changing register" })
+keymap.set("n", "<leader>y", '"+y', { desc = "Copy in system clipboard" })
+keymap.set("v", "<leader>y", '"+y', { desc = "Copy in system clipboard" })
+keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy in system clipboard" })
 
 -- scrolling
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -68,15 +71,19 @@ keymap.set("v", "<tab>", ">gv", { desc = "Indent right" })
 keymap.set("n", "<s-tab>", "<<", { desc = "Indent left" })
 keymap.set("n", "<tab>", ">>", { desc = "Indent right" })
 
+-- cursor in place line join
+keymap.set("n", "J", "mzJ`z")
+
 -- moving blocks up and down
-keymap.set("v", "<C-g>", "<cmd>m .+1<CR>gv=gv", { desc = "Move text down" })
-keymap.set("v", "<C-t>", "<cmd>m .-2<CR>gv=gv", { desc = "Move text up" })
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move text down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })
 
 -- jumping between issues
 keymap.set("n", "<A-d>", "<cmd>silent cc | silent cn<cr>zz", { desc = "Jump to next issue" })
 keymap.set("n", "<A-s>", "<cmd>silent cc | silent cp<cr>zz", { desc = "Jump to previous issue" })
 
 -- other
+keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap.set("n", "<leader>mm", "<cmd>messages<cr>", { desc = "Show messages" })
 keymap.set("n", "}", '<cmd>execute "keepjumps norm! }"<cr>', { desc = "Next Paragraph" })
 keymap.set("n", "{", '<cmd>execute "keepjumps norm! {"<cr>', { desc = "Previous Paragraph" })
