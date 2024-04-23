@@ -6,16 +6,33 @@ return {
   },
   config = function()
     local telescope = require("telescope")
+    local actions = require("telescope.actions")
 
     telescope.setup({
       ensure_installed = { "swift" },
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<C-h>"] = actions.select_horizontal,
+            ["<C-l>"] = actions.select_vertical,
+          },
+          n = {
+            ["j"] = actions.move_selection_next,
+            ["k"] = actions.move_selection_previous,
+            ["h"] = actions.select_horizontal,
+            ["l"] = actions.select_vertical,
+          },
+        },
+      },
     })
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
     local builtin = require("telescope.builtin")
 
-    keymap.set( "n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find all files in cwd" })
+    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find all files in cwd" })
     keymap.set("n", "<leader>fg", function()
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end, { desc = "Live grep in cwd" })

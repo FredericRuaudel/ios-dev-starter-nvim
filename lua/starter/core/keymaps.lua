@@ -10,6 +10,12 @@ local keymap = vim.keymap -- for conciseness
 -- Reload config
 vim.keymap.set("n", "<leader>r", "<cmd>source $MYVIMRC<cr>", { noremap = true, silent = true })
 
+-- remap special caracters
+vim.keymap.set("i", "<A-)>", "]")
+vim.keymap.set("i", "<A-°>", "}")
+vim.keymap.set("i", "<A-(>", "{")
+vim.keymap.set("i", "<A-5>", "[")
+
 -- Neovim
 keymap.set("n", "<esc>", "<cmd>nohl<cr>")
 keymap.set("n", "<C-q>", "<cmd>qa!<CR>", { desc = "Close Neovim" })
