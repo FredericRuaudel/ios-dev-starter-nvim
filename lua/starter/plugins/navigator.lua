@@ -1,11 +1,17 @@
 return {
     "ray-x/navigator.lua",
     dependencies = {
-        'ray-x/guihua.lua',
-        'neovim/nvim-lspconfig',
-        'nvim-treesitter/nvim-treesitter-refactor',
+        "ray-x/guihua.lua",
+        "VonHeikemen/lsp-zero.nvim",
+        "nvim-treesitter/nvim-treesitter-refactor",
     },
     config = function()
-        require('navigator').setup({})
+        require("navigator").setup({
+            default_mapping = true,
+            keymaps = {
+                -- Override the default keymap
+                { key = 'K', func = vim.lsp.buf.signature_help, desc = 'signature_help' },
+            },
+        })
     end,
 }
