@@ -20,7 +20,7 @@
 --extensionacl on-extension
 --extensionlength 0
 --extensionmark "MARK: - %t + %c"
---disable preferForLoop,wrapMultilineStatementBraces,trailingCommas
+--disable preferForLoop,trailingCommas
 --fractiongrouping disabled
 --fragment false
 --funcattributes preserve
