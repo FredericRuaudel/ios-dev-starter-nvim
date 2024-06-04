@@ -66,8 +66,8 @@ keymap.set("v", "<leader>y", '"+y', { desc = "Copy in system clipboard" })
 keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy in system clipboard" })
 
 -- scrolling
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "}")
+keymap.set("n", "<C-u>", "{")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 

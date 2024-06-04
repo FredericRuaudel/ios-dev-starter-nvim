@@ -36,6 +36,10 @@ return {
     keymap.set("n", "<leader>fg", function()
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end, { desc = "Live grep in cwd" })
+    keymap.set("n", "<leader>cg", function()
+      builtin.grep_string({ search = vim.fn.expand("<cword>") })
+    end, { desc = "Live grep in cwd" })
     keymap.set("n", "<C-p>", builtin.git_files, { desc = "Fuzzy find git file search" })
+    keymap.set("n", "<leader>fr", "<leader>yiw<leader>fg<M-C>", { desc = "Fuzzy find word under cursor" })
   end,
 }
