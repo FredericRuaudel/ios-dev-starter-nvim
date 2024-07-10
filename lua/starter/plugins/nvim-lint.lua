@@ -1,3 +1,4 @@
+-- Description: An asynchronous linter plugin
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },

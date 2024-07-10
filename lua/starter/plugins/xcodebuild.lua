@@ -1,3 +1,5 @@
+-- Description: plugin to Build, Debug, and Test applications
+-- created for Apple devices (iOS, macOS, watchOS, etc.)
 local progress_handle
 
 return {

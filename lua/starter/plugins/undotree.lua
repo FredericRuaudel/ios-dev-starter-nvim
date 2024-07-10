@@ -1,3 +1,4 @@
+-- Description: The undo history visualizer
 return {
     "mbbill/undotree",
     config = function()

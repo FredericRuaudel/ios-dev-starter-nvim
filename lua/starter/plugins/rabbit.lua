@@ -1,3 +1,4 @@
+-- Description: Quickly jump between buffers
 return {
     "voxelprismatic/rabbit.nvim",
     config = function()

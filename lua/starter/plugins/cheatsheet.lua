@@ -1,27 +1,28 @@
+-- Description: Plugin for creating and managing cheatsheets
 return {
-    'doctorfree/cheatsheet.nvim',
-    event = 'VeryLazy',
+    "doctorfree/cheatsheet.nvim",
+    event = "VeryLazy",
     dependencies = {
-        { 'nvim-telescope/telescope.nvim' },
-        { 'nvim-lua/popup.nvim' },
-        { 'nvim-lua/plenary.nvim' },
+        { "nvim-telescope/telescope.nvim" },
+        { "nvim-lua/popup.nvim" },
+        { "nvim-lua/plenary.nvim" },
     },
     config = function()
-        local ctactions = require('cheatsheet.telescope.actions')
-        require('cheatsheet').setup({
+        local ctactions = require("cheatsheet.telescope.actions")
+        require("cheatsheet").setup({
             bundled_cheetsheets = {
-                enabled = { 'default', 'lua', 'markdown', 'regex', 'netrw', 'unicode' },
-                disabled = { 'nerd-fonts' },
+                enabled = { "default", "lua", "markdown", "regex", "netrw", "unicode" },
+                disabled = { "nerd-fonts" },
             },
             bundled_plugin_cheatsheets = {
                 enabled = {
-                    'auto-session',
-                    'goto-preview',
-                    'octo.nvim',
-                    'telescope.nvim',
-                    'vim-sandwich',
+                    "auto-session",
+                    "goto-preview",
+                    "octo.nvim",
+                    "telescope.nvim",
+                    "vim-sandwich",
                 },
-                disabled = { 'gitsigns' },
+                disabled = { "gitsigns" },
             },
             include_only_installed_plugins = true,
             telescope_mappings = {

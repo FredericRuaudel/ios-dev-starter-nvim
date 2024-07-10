@@ -1,3 +1,4 @@
+-- Description: A starting point to setup some lsp related features in neovim.
 return {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {
@@ -5,13 +6,13 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-buffer",           -- source for text in buffer
-        "hrsh7th/cmp-path",             -- source for file system paths
-        "hrsh7th/cmp-nvim-lsp",         -- source for LSP server
-        "L3MON4D3/LuaSnip",             -- snippet engine
-        "saadparwaiz1/cmp_luasnip",     -- for autocompletion
+        "hrsh7th/cmp-buffer",       -- source for text in buffer
+        "hrsh7th/cmp-path",         -- source for file system paths
+        "hrsh7th/cmp-nvim-lsp",     -- source for LSP server
+        "L3MON4D3/LuaSnip",         -- snippet engine
+        "saadparwaiz1/cmp_luasnip", -- for autocompletion
         "rafamadriz/friendly-snippets", -- useful snippets
-        "onsails/lspkind.nvim",         -- vs-code like pictograms
+        "onsails/lspkind.nvim",     -- vs-code like pictograms
     },
     config = function()
         local lsp = require("lsp-zero")
@@ -71,8 +72,8 @@ return {
             sources = {
                 { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
-                { name = "buffer" },  -- text within current buffer
-                { name = "path" },    -- file system paths
+                { name = "buffer" }, -- text within current buffer
+                { name = "path" }, -- file system paths
             },
             --- (Optional) Show source name in completion menu
             formatting = cmp_format,
@@ -89,8 +90,8 @@ return {
             mapping = {
                 ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
                 ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-                ["<C-Space>"] = cmp.mapping.complete(),     -- show completion suggestions
-                ["<C-e>"] = cmp.mapping.abort(),            -- close completion window
+                ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+                ["<C-e>"] = cmp.mapping.abort(),    -- close completion window
                 ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
                 ["<C-b>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(-1) then
